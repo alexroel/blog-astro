@@ -1,0 +1,33 @@
+---
+import Social from "./Social.astro";
+---
+
+<footer>
+    <div class="container">
+        <p class="text-center">
+            ¡Más información sobre mis proyectos en
+            <Social platform="github" username="alexroel" icon="bi bi-github" />
+        </p>
+
+        <div class="social-media">
+            <Social platform="github" username="alexroel" icon = "bi bi-github" />
+            <Social platform="youtube" username="roelcode" icon = "bi bi-youtube" />
+            <Social platform="facebook" username="alexroelcode" icon = "bi bi-facebook" />
+            <Social platform="tiktok" username="roelcode" icon = "bi bi-tiktok" />
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer{
+        background-color: var(--text-color);
+        color: var(--bg-color);
+        padding: 30px 0;
+    }
+    .social-media{
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        margin: 30px 0;
+    }
+</style>

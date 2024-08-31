@@ -3,6 +3,8 @@ import "normalize.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../styles/global.css"; // Tus estilos personalizados
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 const { title } = Astro.props;
 ---
 
@@ -16,11 +18,40 @@ const { title } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <title>{title}</title>
     </head>
-    <body>
-        <slot />
+    <body class="">
+        <Header />
 
-        <script type="module">
+        <!-- Botón para cambiar el tema -->
+        <button id="theme-toggle" class="btn btn-dark position-fixed top-0 end-0 m-3">
+            <i class="bi bi-moon-fill"></i> <!-- Icono de luna para modo oscuro -->
+        </button>
+
+        <div class="container">
+            <slot />
+        </div>
+
+        <Footer />
+
+        <script>
             import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
+            // JavaScript para cambiar el tema
+            const toggleButton = document.getElementById("theme-toggle");
+            const body = document.body;
+
+            toggleButton.addEventListener("click", () => {
+                body.classList.toggle("dark-mode");
+
+                if (body.classList.contains("dark-mode")) {
+                    toggleButton.innerHTML = '<i class="bi bi-sun-fill"></i>'; // Icono de sol para modo claro
+                    toggleButton.classList.remove("btn-dark");
+                    toggleButton.classList.add("btn-light");
+                } else {
+                    toggleButton.innerHTML = '<i class="bi bi-moon-fill"></i>'; // Icono de luna para modo oscuro
+                    toggleButton.classList.remove("btn-light");
+                    toggleButton.classList.add("btn-dark");
+                }
+            });
         </script>
     </body>
 </html>
