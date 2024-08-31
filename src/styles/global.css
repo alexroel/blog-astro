@@ -1,17 +1,7 @@
 /* Estilos generales - Modo Claro */
 :root {
     --bg-color: #eaecee;
-    /* bg-light */
     --text-color: #17202a;
-    /* text-dark */
-}
-
-/* Modo Oscuro */
-body.dark-mode {
-    --bg-color: #17202a;
-    /* bg-light */
-    --text-color: #eaecee;
-    /* text-dark */
 }
 
 body {
@@ -20,3 +10,12 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+[data-theme="dark"] {
+    --bg-color: #17202a;
+    --text-color: #eaecee;
+}
+
+
+a{
+    text-decoration: none;
+}

@@ -10,9 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/preact": "^3.5.2",
+    "@astrojs/rss": "^4.0.7",
     "astro": "^4.15.1",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "preact": "^10.23.2"
   }
 }
